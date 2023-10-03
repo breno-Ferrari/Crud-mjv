@@ -1,0 +1,27 @@
+<form>
+  <fieldset>
+    <legend>
+      {{campoDesabilitado? "Atualização de cadastro": "Cadastro de novo Usuario"}}
+    </legend>
+
+    <div class="fieldsStyles">
+      <label for="email">Email:</label>
+      <input type="text" id="email" #emailInput required [disabled]="campoDesabilitado" class="input"/>
+    </div>
+
+    <div class="fieldsStyles">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" #nomeInput required class="input">
+    </div>
+
+    <div class="fieldsStyles">
+      <label for="sobreNome">sobreNome:</label>
+      <input type="text" id="sobreNome" name="sobreNome" #sobreNomeInput required class="input">
+    </div>
+
+    <button (click)="addUser($event)" [hidden]="campoDesabilitado" class="formButton">Salvar dados</button>
+
+    <button (click)="AtualizaDados($event)"[hidden]="!campoDesabilitado" class="formButton">atualizar</button>
+  </fieldset>
+</form>
+

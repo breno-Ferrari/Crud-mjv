@@ -1,0 +1,18 @@
+<h1 class="title">
+  Lista de usuarios
+</h1>
+<ul class="list">
+  <li *ngFor="let user of users">
+    <div class="perfil">
+      <img src="{{ user.picture }}" alt="{{ user.firstName }}" class="photo-user">
+      <p class="name">
+        {{ user.firstName }} {{ user.lastName }}
+      </p>
+    </div>
+    <div class="list-buttons">
+      <button (click)="deleteUser(user.id)" class="">Deletar</button>
+      <button (click)="updateUser(user.id)">Atualizar</button>
+    </div>
+  </li>
+
+</ul>
